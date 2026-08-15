@@ -315,7 +315,7 @@ export const projects = [
 ]
 
 export const navLinks = [
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'Skills Acquired', href: '#skills' },
+  { label: 'My Projects', href: '#projects' },
   { label: 'GitHub', href: '#github' },
 ]
