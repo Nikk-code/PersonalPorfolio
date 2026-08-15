@@ -12,7 +12,12 @@ export default function Hero() {
           <a href={`tel:${personalInfo.phone}`} className="hero__phone">
             Call: {personalInfo.phone}
           </a>
-          <a href={`mailto:${personalInfo.email}`} className="hero__email">
+          <a
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero__email"
+          >
             Email Me
           </a>
         </div>
