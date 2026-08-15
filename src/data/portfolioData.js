@@ -2,7 +2,7 @@ export const personalInfo = {
   greeting: 'Hi, my name is',
   name: 'Nikhil Chandrakant Sakalkar',
   tagline:
-    'I have earned many skills and built industry grade projects using them. Explore my projects below',
+    'I am a Test Automation Engineer specialized in building high-performance automation frameworks (Playwright & Tosca) and CI/CD pipelines that accelerate release cycles, optimize execution times, and ensure enterprise software quality.',
   phone: '+91-7020581542',
   email: 'nikkhilsakalkar@gmail.com',
   github: 'https://github.com/Nikk-code',
