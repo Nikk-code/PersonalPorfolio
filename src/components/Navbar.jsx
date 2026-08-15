@@ -78,6 +78,13 @@ export default function Navbar() {
                 </a>
               )
             })}
+            <a
+              href="/PersonalPorfolio/Nikhil_Sakalkar_Resume.pdf"
+              download="Nikhil_Sakalkar_Resume.pdf"
+              className="navbar__resume-btn"
+            >
+              Resume
+            </a>
           </nav>
           <span className="navbar__divider"></span>
           <div className="navbar__socials">

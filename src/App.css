@@ -95,6 +95,18 @@ main {
   background: rgba(255, 255, 255, 0.15);
 }
 
+.navbar-header--scrolled .navbar__resume-btn {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.navbar-header--scrolled .navbar__resume-btn:hover {
+  background: #ffffff;
+  color: var(--accent);
+  border-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
 @keyframes navbarSlideIn {
   from {
     transform: translateY(-50px);
@@ -200,6 +212,26 @@ main {
 .navbar__link--active {
   color: var(--text-primary);
   font-weight: 600;
+}
+
+.navbar__resume-btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 1.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  margin-left: 8px; /* space between last nav link and resume button */
+}
+
+.navbar__resume-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px var(--accent-glow);
 }
 
 .navbar__divider {
@@ -333,6 +365,26 @@ main {
 
 .hero__email:hover {
   background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.hero__resume {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  padding: 12px 24px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.hero__resume:hover {
+  background: rgba(124, 58, 237, 0.05);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px var(--accent-glow);
 }
