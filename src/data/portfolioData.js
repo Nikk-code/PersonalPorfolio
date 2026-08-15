@@ -314,8 +314,47 @@ export const projects = [
   },
 ]
 
+export const certificates = [
+  {
+    id: 1,
+    title: 'Tricentis Tosca Fundamentals – Automation web application testing (AS1)',
+    issuer: 'Tricentis',
+    date: 'Feb, 2025',
+    theme: 'tosca',
+  },
+  {
+    id: 2,
+    title: 'Tricentis TOSCA Fundamentals – Optimizing test automation with centralized test data (AS2)',
+    issuer: 'Tricentis',
+    date: 'Feb, 2025',
+    theme: 'tosca',
+  },
+  {
+    id: 3,
+    title: 'Cognizant Certified HP UFT - Basic to Intermediate',
+    issuer: 'Cognizant',
+    date: 'Aug, 2022',
+    theme: 'cognizant',
+  },
+  {
+    id: 4,
+    title: 'Cognizant Certified SAP Sales and Distribution (SD)',
+    issuer: 'Cognizant (SAP)',
+    date: 'Jan, 2022',
+    theme: 'sap',
+  },
+  {
+    id: 5,
+    title: 'Cognizant Certified SAP MM (Material Management)',
+    issuer: 'Cognizant (SAP)',
+    date: 'Dec, 2021',
+    theme: 'sap',
+  },
+]
+
 export const navLinks = [
   { label: 'Skills Acquired', href: '#skills' },
+  { label: 'Certifications', href: '#certificates' },
   { label: 'My Projects', href: '#projects' },
   { label: 'GitHub', href: '#github' },
 ]

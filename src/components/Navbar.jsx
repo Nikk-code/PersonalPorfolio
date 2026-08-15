@@ -19,7 +19,7 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    const sectionIds = ['home', 'skills', 'projects', 'github']
+    const sectionIds = ['home', 'skills', 'certificates', 'projects', 'github']
     const sections = sectionIds.map((id) => document.getElementById(id))
 
     const observerOptions = {

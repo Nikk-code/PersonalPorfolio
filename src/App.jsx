@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
 import Skills from './components/Skills'
+import Certificates from './components/Certificates'
 import Projects from './components/Projects'
 import GitHubContributions from './components/GitHubContributions'
 import Footer from './components/Footer'
@@ -17,6 +18,7 @@ function App() {
           <Hero />
           <Stats />
           <Skills />
+          <Certificates />
           <Projects />
           <GitHubContributions />
         </main>
