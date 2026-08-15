@@ -29,16 +29,16 @@ main {
   background-color: transparent;
   border-bottom: 1px solid transparent;
   z-index: 1000;
-  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 1.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 1.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 1.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar-header--scrolled {
   background-color: var(--accent);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 10px 30px var(--accent-glow);
-  animation: navbarSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: navbarSlideIn 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Scrolled Navbar Child Styles for readability on purple background */
@@ -97,8 +97,8 @@ main {
 
 @keyframes navbarSlideIn {
   from {
-    transform: translateY(-8px);
-    opacity: 0.9;
+    transform: translateY(-50px);
+    opacity: 0;
   }
   to {
     transform: translateY(0);
@@ -133,7 +133,7 @@ main {
   height: 32px;
   color: var(--accent-light);
   flex-shrink: 0;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 1.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar__brand:hover .navbar__logo {
@@ -146,7 +146,7 @@ main {
   font-size: 1.05rem;
   color: var(--text-primary);
   letter-spacing: -0.01em;
-  transition: color 0.2s ease;
+  transition: color 1.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar__brand:hover .navbar__brand-text {
@@ -170,7 +170,7 @@ main {
   font-weight: 500;
   position: relative;
   padding: 6px 0;
-  transition: color 0.2s ease;
+  transition: color 1.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 
@@ -221,7 +221,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 1.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease;
   text-decoration: none;
 }
 
@@ -243,7 +243,7 @@ main {
   background: var(--bg-card);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  transition: border-color 1.3s cubic-bezier(0.16, 1, 0.3, 1), color 1.3s cubic-bezier(0.16, 1, 0.3, 1), background 1.3s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
 }
 
