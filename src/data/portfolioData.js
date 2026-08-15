@@ -10,7 +10,7 @@ export const personalInfo = {
 }
 
 export const stats = [
-  { label: 'VERIFIED SKILLS', value: 9 },
+  { label: 'VERIFIED SKILLS', value: 34 },
   { label: 'PROFESSIONAL PROJECTS', value: 7 },
   { label: 'DSA PROBLEMS SOLVED', value: '200+' },
 ]
