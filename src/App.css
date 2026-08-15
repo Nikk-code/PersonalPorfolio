@@ -26,12 +26,84 @@ main {
   left: 0;
   right: 0;
   width: 100%;
-  background-color: var(--bg-primary);
-  border-bottom: 1px solid var(--border);
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
   z-index: 1000;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-header--scrolled {
+  background-color: var(--accent);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px var(--accent-glow);
+  animation: navbarSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrolled Navbar Child Styles for readability on purple background */
+.navbar-header--scrolled .navbar__logo {
+  color: #ffffff;
+}
+
+.navbar-header--scrolled .navbar__brand-text {
+  color: #ffffff;
+}
+
+.navbar-header--scrolled .navbar__brand:hover .navbar__brand-text,
+.navbar-header--scrolled .navbar__brand:hover .navbar__logo {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-header--scrolled .navbar__link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-header--scrolled .navbar__link:hover {
+  color: #ffffff;
+}
+
+.navbar-header--scrolled .navbar__link::after {
+  background-color: #ffffff;
+}
+
+.navbar-header--scrolled .navbar__link--active {
+  color: #ffffff;
+}
+
+.navbar-header--scrolled .navbar__divider {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-header--scrolled .navbar__social-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-header--scrolled .navbar__social-link:hover {
+  color: #ffffff;
+}
+
+.navbar-header--scrolled .theme-toggle {
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-header--scrolled .theme-toggle:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@keyframes navbarSlideIn {
+  from {
+    transform: translateY(-8px);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .navbar {
@@ -41,7 +113,12 @@ main {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 18px 32px;
+  padding: 24px 32px;
+  transition: padding 0.3s ease;
+}
+
+.navbar-header--scrolled .navbar {
+  padding: 16px 32px;
 }
 
 .navbar__brand {

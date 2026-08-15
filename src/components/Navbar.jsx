@@ -4,6 +4,19 @@ import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('')
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 15) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     const sectionIds = ['home', 'skills', 'projects', 'github']
@@ -39,7 +52,7 @@ export default function Navbar() {
   }, [])
 
   return (
-    <header className="navbar-header">
+    <header className={`navbar-header ${isScrolled ? 'navbar-header--scrolled' : ''}`}>
       <div className="navbar">
         <a href="#" className="navbar__brand">
           <svg className="navbar__logo" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
