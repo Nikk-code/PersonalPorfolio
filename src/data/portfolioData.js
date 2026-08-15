@@ -321,6 +321,7 @@ export const certificates = [
     issuer: 'Tricentis',
     date: 'Feb, 2025',
     theme: 'tosca',
+    verifyUrl: 'https://academy.tricentis.com/share/gamification/badges/external/ca656aa2-5404-49b3-a4be-5fb5f9c0f34c?lang=en',
   },
   {
     id: 2,
@@ -328,6 +329,7 @@ export const certificates = [
     issuer: 'Tricentis',
     date: 'Feb, 2025',
     theme: 'tosca',
+    verifyUrl: 'https://academy.tricentis.com/share/gamification/badges/external/c12aabcf-f0a3-4f49-abaa-056fdd1fedf7?lang=en',
   },
   {
     id: 3,
@@ -342,6 +344,8 @@ export const certificates = [
     issuer: 'Cognizant (SAP)',
     date: 'Jan, 2022',
     theme: 'sap',
+    verifyUrl: 'https://www.credly.com/badges/ceb97410-a14b-45fc-9b3a-171c71d0d517/public_url',
+    fileUrl: '/PersonalPorfolio/Cognizant_SAP_SD_Certificate.pdf',
   },
   {
     id: 5,
@@ -349,6 +353,8 @@ export const certificates = [
     issuer: 'Cognizant (SAP)',
     date: 'Dec, 2021',
     theme: 'sap',
+    verifyUrl: 'https://www.credly.com/badges/ce4733fe-6256-479b-964b-a0b216e650f8/public_url',
+    fileUrl: '/PersonalPorfolio/Cognizant_SAP_MM_Certificate.pdf',
   },
 ]
 

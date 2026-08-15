@@ -4,6 +4,7 @@ import { certificates } from '../data/portfolioData'
 export default function Certificates() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [visibleCards, setVisibleCards] = useState(3)
+  const [activePreview, setActivePreview] = useState(null)
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,6 +36,18 @@ export default function Certificates() {
       setCurrentIndex(maxIndex)
     }
   }, [visibleCards, maxIndex, currentIndex])
+
+  // Lock body scroll when modal is active
+  useEffect(() => {
+    if (activePreview) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [activePreview])
 
   return (
     <section className="certificates" id="certificates">
@@ -82,6 +95,39 @@ export default function Certificates() {
                       </div>
                       <h3 className="certificates__card-title">{cert.title}</h3>
                     </div>
+                    {(cert.verifyUrl || cert.fileUrl) && (
+                      <div className="certificates__card-actions">
+                        {cert.verifyUrl && (
+                          <a 
+                            href={cert.verifyUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="certificates__action-link"
+                          >
+                            Verify Online
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
+                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                              <polyline points="15 3 21 3 21 9" />
+                              <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                          </a>
+                        )}
+                        {cert.fileUrl && (
+                          <button 
+                            onClick={() => setActivePreview(cert)} 
+                            className="certificates__action-btn"
+                          >
+                            View Doc
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                              <polyline points="14 2 14 8 20 8" />
+                              <line x1="16" y1="13" x2="8" y2="13" />
+                              <line x1="16" y1="17" x2="8" y2="17" />
+                            </svg>
+                          </button>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -113,6 +159,58 @@ export default function Certificates() {
           </div>
         )}
       </div>
+
+      {/* Dynamic Pop-up Modal Preview */}
+      {activePreview && (
+        <div className="cert-modal" onClick={() => setActivePreview(null)}>
+          <div className="cert-modal__content" onClick={(e) => e.stopPropagation()}>
+            <div className="cert-modal__header">
+              <h3 className="cert-modal__title">{activePreview.title}</h3>
+              <div className="cert-modal__actions">
+                <a 
+                  href={activePreview.fileUrl} 
+                  download 
+                  className="cert-modal__btn cert-modal__btn--primary"
+                  title="Download File"
+                >
+                  Download
+                </a>
+                <a 
+                  href={activePreview.fileUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="cert-modal__btn cert-modal__btn--secondary"
+                  title="Open in new tab"
+                >
+                  Open in New Tab
+                </a>
+                <button className="cert-modal__close" onClick={() => setActivePreview(null)} aria-label="Close modal">
+                  &times;
+                </button>
+              </div>
+            </div>
+            <div className="cert-modal__body">
+              {activePreview.fileUrl.toLowerCase().endsWith('.pdf') ? (
+                <iframe 
+                  src={activePreview.fileUrl} 
+                  title="Certificate PDF Preview" 
+                  className="cert-modal__iframe"
+                  width="100%" 
+                  height="500px"
+                />
+              ) : (
+                <div className="cert-modal__img-wrapper">
+                  <img 
+                    src={activePreview.fileUrl} 
+                    alt="Certificate Preview" 
+                    className="cert-modal__img"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
