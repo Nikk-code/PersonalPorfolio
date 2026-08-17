@@ -384,6 +384,14 @@ export const certificates = [
     verifyUrl: 'https://learn.microsoft.com/api/credentials/share/en-us/SakalkarNikhilCognizant-2320/B55B7D5E1DD21041?sharingId=BB93964F052331B3',
     fileUrl: '/PersonalPorfolio/Microsoft_Certified_GitHub_Copilot.pdf',
   },
+  {
+    id: 9,
+    title: 'Tricentis Tosca Product Consultant Certification Exam',
+    issuer: 'Tricentis',
+    date: 'Sep, 2025',
+    theme: 'tosca',
+    fileUrl: '/PersonalPorfolio/Tricentis_Tosca_Product_Consultant_Certification_Exam.pdf',
+  },
 ]
 
 export const navLinks = [
