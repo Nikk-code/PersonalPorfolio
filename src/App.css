@@ -2,6 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 main {
@@ -568,6 +569,7 @@ main {
   align-items: center;
   gap: 16px;
   width: 100%;
+  min-width: 0;
 }
 
 .certificates__slider-viewport {
@@ -578,6 +580,7 @@ main {
 
 .certificates__track {
   display: flex;
+  width: 100%;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }
@@ -677,6 +680,8 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-bottom: 20px;
 }
 
@@ -979,7 +984,7 @@ main {
 /* Split Layout Container */
 .certificates__split-layout {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: 32px;
   align-items: flex-start;
 }
@@ -994,6 +999,7 @@ main {
   flex-direction: column;
   gap: 16px;
   max-height: 520px;
+  min-width: 0;
 }
 
 .certificates__list-header {
@@ -1110,12 +1116,13 @@ main {
   width: 100%;
   max-width: 500px;
   justify-self: center;
+  min-width: 0;
 }
 
 /* Responsive updates for Split layout */
 @media (max-width: 768px) {
   .certificates__split-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   
   .certificates__list-panel {
@@ -1247,9 +1254,11 @@ main {
 
 .github__chart {
   width: 100%;
+  height: auto;
   max-width: 800px;
   margin: 0 auto 20px;
   border-radius: var(--radius-sm);
+  display: block;
 }
 
 .github__link {
@@ -1662,8 +1671,16 @@ main {
 }
 
 @media (max-width: 480px) {
+  main {
+    padding: 0 20px 48px;
+  }
+
   .navbar {
     padding: 16px 20px;
+  }
+
+  .skills__categories {
+    grid-template-columns: 1fr;
   }
 
   .navbar-header--scrolled .navbar {
