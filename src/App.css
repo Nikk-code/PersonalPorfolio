@@ -1340,11 +1340,20 @@ main {
 /* Responsive */
 @media (max-width: 768px) {
   .navbar__links {
+    display: none; /* Hide wide text links on mobile viewports to prevent wrapping and squishing */
+  }
+
+  .navbar__divider {
+    display: none;
+  }
+
+  .navbar__right {
     gap: 16px;
   }
 
   .stats {
     flex-direction: column;
+    padding: 24px 16px;
   }
 
   .stats__card:not(:last-child)::after {
@@ -1358,13 +1367,13 @@ main {
 
   .hero {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
     text-align: center;
-    padding: 48px 0 32px;
+    padding: 32px 0 24px;
   }
 
   .hero__tagline {
-    margin: 0 auto 28px;
+    margin: 0 auto 24px;
   }
 
   .hero__actions {
@@ -1374,6 +1383,7 @@ main {
   .hero__avatar-wrapper {
     width: 240px;
     height: 320px;
+    margin: 0 auto;
   }
 
   .projects__grid {
@@ -1381,15 +1391,103 @@ main {
   }
 }
 
-@media (max-width: 480px) {
-  .navbar {
+@media (max-width: 600px) {
+  .hero__actions {
     flex-direction: column;
+    width: 100%;
     gap: 12px;
   }
 
-  .navbar__right {
+  .hero__phone,
+  .hero__email,
+  .hero__resume {
     width: 100%;
-    justify-content: space-between;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  /* Reposition certifications navigation on tiny screens to maximize card width */
+  .certificates__wrapper {
+    gap: 0;
+  }
+
+  .certificates__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: var(--bg-card);
+    border-color: var(--border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .certificates__btn--prev {
+    left: -8px;
+  }
+
+  .certificates__btn--next {
+    right: -8px;
+  }
+
+  /* Responsive preview modal layouts to fit short screens */
+  .cert-modal__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    position: relative;
+  }
+
+  .cert-modal__title {
+    max-width: 90%;
+    white-space: normal;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .cert-modal__actions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .cert-modal__actions .cert-modal__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  .cert-modal__body {
+    padding: 12px;
+  }
+
+  .cert-modal__iframe {
+    height: 360px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .navbar-header--scrolled .navbar {
+    padding: 12px 20px;
+  }
+
+  .navbar__brand-text {
+    font-size: 0.95rem;
+  }
+
+  .project-card__header {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .project-card__date {
+    white-space: normal;
   }
 
   .modal {
