@@ -23,8 +23,6 @@ main {
 .navbar-header {
   position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   width: 100%;
   background-color: transparent;
   border-bottom: 1px solid transparent;
@@ -1519,6 +1517,15 @@ main {
 
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navbarSlideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
     transform: translateY(0);
   }
 }
