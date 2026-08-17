@@ -575,6 +575,7 @@ main {
 .certificates__slider-viewport {
   overflow: hidden;
   width: 100%;
+  min-width: 0;
 }
 
 .certificates__track {
@@ -627,6 +628,18 @@ main {
   background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
 }
 
+.certificates__card--anthropic-claude::before {
+  background: linear-gradient(90deg, #e05e38 0%, #b8401d 100%);
+}
+
+.certificates__card--aws::before {
+  background: linear-gradient(90deg, #ff9900 0%, #ff5500 100%);
+}
+
+.certificates__card--microsoft::before {
+  background: linear-gradient(90deg, #0078d4 0%, #00a4ef 100%);
+}
+
 .certificates__card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -645,6 +658,21 @@ main {
 .certificates__card--sap:hover {
   border-color: #d97706;
   box-shadow: 0 10px 25px rgba(217, 119, 6, 0.12);
+}
+
+.certificates__card--anthropic-claude:hover {
+  border-color: #e05e38;
+  box-shadow: 0 10px 25px rgba(224, 94, 56, 0.12);
+}
+
+.certificates__card--aws:hover {
+  border-color: #ff9900;
+  box-shadow: 0 10px 25px rgba(255, 153, 0, 0.12);
+}
+
+.certificates__card--microsoft:hover {
+  border-color: #0078d4;
+  box-shadow: 0 10px 25px rgba(0, 120, 212, 0.12);
 }
 
 .certificates__card-header {
@@ -693,6 +721,18 @@ main {
 
 .certificates__card--sap .certificates__icon-wrapper {
   color: #d97706;
+}
+
+.certificates__card--anthropic-claude .certificates__icon-wrapper {
+  color: #e05e38;
+}
+
+.certificates__card--aws .certificates__icon-wrapper {
+  color: #ff9900;
+}
+
+.certificates__card--microsoft .certificates__icon-wrapper {
+  color: #0078d4;
 }
 
 .certificates__card-title {
