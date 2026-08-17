@@ -70,15 +70,14 @@ export default function Certificates() {
             <div 
               className="certificates__track"
               style={{
-                transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
-                width: `${(certificates.length / visibleCards) * 100}%`
+                transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`
               }}
             >
               {certificates.map((cert) => (
                 <div 
                   className="certificates__card-wrapper" 
                   key={cert.id}
-                  style={{ width: `${100 / certificates.length}%` }}
+                  style={{ flex: `0 0 ${100 / visibleCards}%` }}
                 >
                   <div className={`certificates__card certificates__card--${cert.theme}`}>
                     <div className="certificates__card-header">
