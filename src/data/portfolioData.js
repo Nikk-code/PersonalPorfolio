@@ -340,8 +340,8 @@ export const certificates = [
   },
   {
     id: 4,
-    title: 'Cognizant Certified SAP Sales and Distribution (SD)',
-    issuer: 'Cognizant (SAP)',
+    title: 'SAP Certified Sales and Distribution (SD)',
+    issuer: 'SAP',
     date: 'Jan, 2022',
     theme: 'sap',
     verifyUrl: 'https://www.credly.com/badges/ceb97410-a14b-45fc-9b3a-171c71d0d517/public_url',
@@ -349,12 +349,40 @@ export const certificates = [
   },
   {
     id: 5,
-    title: 'Cognizant Certified SAP MM (Material Management)',
-    issuer: 'Cognizant (SAP)',
+    title: 'SAP Certified SAP MM (Material Management)',
+    issuer: 'SAP',
     date: 'Dec, 2021',
     theme: 'sap',
     verifyUrl: 'https://www.credly.com/badges/ce4733fe-6256-479b-964b-a0b216e650f8/public_url',
     fileUrl: '/PersonalPorfolio/Cognizant_SAP_MM_Certificate.pdf',
+  },
+  {
+    id: 6,
+    title: 'Claude Certified Architect - Foundations',
+    issuer: 'Anthropic Claude',
+    date: 'July, 2026',
+    theme: 'anthropic-claude',
+    verifyUrl: 'https://www.credly.com/badges/e2a3c6d2-57b3-4193-99d3-19c495cf3d8d/public_url',
+    fileUrl: '/PersonalPorfolio/Claude_Certified_Architect_Foundations.pdf',
+  },
+  {
+    id: 7,
+    title: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services',
+    date: 'July, 2026',
+    theme: 'aws',
+    verifyUrl: 'https://cp.certmetrics.com/amazon/en/public/verify/credential',
+    fileUrl: '/PersonalPorfolio/AWS_Certified_Cloud_Practitioner.pdf',
+  },
+
+  {
+    id: 8,
+    title: 'Microsoft Certified: GitHub Copilot',
+    issuer: 'Microsoft',
+    date: 'July, 2026',
+    theme: 'microsoft',
+    verifyUrl: 'https://learn.microsoft.com/api/credentials/share/en-us/SakalkarNikhilCognizant-2320/B55B7D5E1DD21041?sharingId=BB93964F052331B3',
+    fileUrl: '/PersonalPorfolio/Microsoft_Certified_GitHub_Copilot.pdf',
   },
 ]
 
