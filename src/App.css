@@ -978,6 +978,152 @@ main {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* Split Layout Container */
+.certificates__split-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* Left Panel: List Styling */
+.certificates__list-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 520px;
+}
+
+.certificates__list-header {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.certificates__list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Custom Scrollbar for list */
+.certificates__list-items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.certificates__list-items::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.certificates__list-items::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 999px;
+}
+
+/* List Item Buttons */
+.certificates__list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.certificates__list-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  background: transparent;
+}
+
+/* Left Border Indicator Colors by Theme */
+.certificates__list-item--tosca::before { background: #3b82f6; }
+.certificates__list-item--cognizant::before { background: #0077b6; }
+.certificates__list-item--sap::before { background: #d97706; }
+.certificates__list-item--anthropic-claude::before { background: #e05e38; }
+.certificates__list-item--aws::before { background: #ff9900; }
+.certificates__list-item--microsoft::before { background: #0078d4; }
+
+.certificates__list-item:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-light);
+}
+
+/* Active State styling */
+.certificates__list-item--active {
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.certificates__list-item--active .certificates__list-title {
+  color: var(--accent-light);
+}
+
+.certificates__list-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.certificates__list-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  transition: color 0.2s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right Panel: Preview Section */
+.certificates__preview-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 500px;
+  justify-self: center;
+}
+
+/* Responsive updates for Split layout */
+@media (max-width: 768px) {
+  .certificates__split-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .certificates__list-panel {
+    display: none; /* Hide quick sidebar list on mobile to save vertical space */
+  }
+}
+
 /* Projects */
 .projects {
   margin-bottom: 72px;
